@@ -1,0 +1,18 @@
+.jumbotron{
+	background: #60A0BB;
+	color: white;
+	min-height: 500px;
+}
+.jumbotron{
+	text-align: center;
+}
+
+.alert-warning{
+	background-color: #777777;
+	color: white;
+	border: none;
+}
+
+.on{
+	background-color: green;
+}

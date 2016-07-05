@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="ServiceApp">
+<head>
+
+	<meta charset="UTF-8">
+	<title>chap3 exo2</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="bower_components/angular/angular.js"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script> -->
+
+	<script src="js/exo2.js"></script>
+
+</head>
+
+<body ng-controller="ServiceController as service">
+	<div class="container">
+		<div class="jumbotron col-md-8 col-md-offset-2">
+			<div class="row">
+				<h1>Services</h1>
+				
+				<div class="alert alert-info">
+					<p>Choisissez les éléments à inclure : 
+					<ng-pluralize count="serviceCount"
+					when="{
+					0: 'Aucun service sélectionné',
+					'one': '1 service sélectionnés.',
+					'other': '{} service sélectionné.'
+					}">
+					</ng-pluralize></p>
+				</div>	
+
+
+
+
+				<div class="alert alert-warning" ng-repeat="product in products" ng-click="validation(product)"
+				ng-class="{on : product.active}">
+					<p>{{product.name}}</p>
+					<p>{{product.price | currency}}</p>
+				</div>
+				<hr>
+
+				<div class="total">
+					<p class="col-md-10">Total : </p>
+					<p>{{total}}</p>
+				</div>
+
+			</div>
+			
+		</div>
+	</div>
+</body>
+</html>

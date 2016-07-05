@@ -1,0 +1,19 @@
+.jumbotron{
+	background: #60A0BB;
+	color: white;
+	min-height: 600px;
+}
+h1{
+	text-align: center;
+}
+button:first-child{
+	margin-top: 35px;
+	/*margin-bottom: -40px;*/
+}
+button{
+	margin-top: 8px;
+}
+
+select{
+	width: 450px;
+}

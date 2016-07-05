@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="NoteApp">
+<head>
+	<meta charset="UTF-8">
+	<title>chap3 exo1</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+	<script src="bower_components/angular/angular.min.js">  </script>
+	<script src="js/exo1.js"></script>
+</head>
+<body ng-controller="NoteCtrl as note">
+	<div class="container">
+
+		<!-- <div class="panel panel-primary">
+			<div class="panel-heading">Ex 1 : Note Application</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<p>
+						<label for="message">Note :</label>
+						<textarea name="message" id="" cols="40" rows="5" maxlength="100" ng-model="note.message"></textarea>
+					</p>
+				</div>
+			</div> -->
+		<!-- </div> -->
+	
+
+
+		<div class="panel panel-primary">
+			<div class="panel-heading">Ex 1 : Note Application</div>
+			
+			<div class="row">
+				<div class="col-md-12">
+					<textarea name="" id="" cols="50" rows="10" ng-model="note.message" maxlength="100" autofocus autocomplete="off">
+					</textarea>
+				</div>
+			</div>
+
+			<!-- PARTIE BOUTON -->
+			<div class="row">
+				<div class="col-md-3">
+					<button type="button" class="btn btn-primary" ng-click="note.save()">Enregistrer</button>
+
+					<button class="btn btn-primary" ng-click="note.delete()">Effacer</button>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-12">
+					<div class="alert alert-info" role="alert">Nombre de caractères restant : {{100 - note.message.length}}
+					</div>
+
+					<div ng-class="{'note.mode==0 :'alert-info', 'note.mode==1 : 'alert-warning', note.mode==2 : alert-success}" class="alert alert-success" role="alert" ng-show="note.info">{{note.info}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

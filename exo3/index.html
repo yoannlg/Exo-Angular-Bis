@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="ListesApp">
+<head>
+	<meta charset="UTF-8">
+	<title>chap3 exo3</title>
+
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="bower_components/angular/angular.js"></script>
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script> -->
+
+	<script src="js/exo3.js"></script>
+
+</head>
+<body ng-controller="ListesController as listes">
+	<div class="container">
+		<div class="panel panel-info">
+			<div class="panel-heading">
+				<h1>Selectionnez vos produits</h1>
+			
+			
+				<div class="row">
+					<div class="col-md-5">
+						<p>Produits disponibles :</p>
+
+					
+						<select name="" id="" size="9">
+							<option ng-repeat="item in listes.dispoItems">{{item.title}}</option>
+						</select>
+
+					</div>
+					<div class="col-md-1 col-md-offset-1">
+						<button class="btn btn-primary first" ng-click="addToIncluded()"><span class="glyphicon glyphicon-step-forward"></span>
+						</button>
+						<button class="btn btn-primary"><span class="glyphicon glyphicon-fast-forward" ng-click="addAllToInclued()"></span>
+						</button>
+						<button class="btn btn-primary"><span class="glyphicon glyphicon-step-backward"></span>
+						</button>
+						<button class="btn btn-primary"><span class="glyphicon glyphicon-fast-backward"></span>
+						</button>
+					</div>
+					<div class="col-md-5">
+					<p>Produit sélectionné</p>
+						
+						<select name="" id="" size="12">
+							<option>
+								
+							</option>
+						</select>
+					</div>
+				</div>
+			</div>
+				<select ng-options="item as item.label for item in items track by item.id" ng-model="selected" size="10"></select>
+				<p>{{selected}}</p>
+		</div>
+	</div>
+	
+</body>
+</html>
